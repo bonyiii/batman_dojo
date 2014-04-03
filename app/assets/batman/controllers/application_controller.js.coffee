@@ -1,0 +1,1 @@
+class Jstest.ApplicationController extends Batman.Controller
