@@ -1,6 +1,13 @@
 Jstest::Application.routes.draw do
 
-  get "(*redirect_path)", to: "batman#index", constraints: lambda { |request| request.format == "text/html" }
+  resources :users
+
+  #get "(*redirect_path)", to: "batman#index", constraints: lambda { |request| request.format == "text/html" }
+  get "/jstest", to: "batman#index", constraints: lambda { |request| request.format == "text/html" }
+  get "/jstest/*redirect_path", to: "batman#index", constraints: lambda { |request| request.format == "text/html" }
+
+
+  root "users#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

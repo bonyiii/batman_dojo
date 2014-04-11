@@ -1,0 +1,18 @@
+<span data-bind="'user' | pluralize users.length"></span>
+
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Created at</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <tr data-foreach-user="users">
+      <td><a data-bind="user.name" data-route="user"></a></td>
+      <td><a data-bind="user.created_at" data-route="user"></a></td>
+      <td><a data-event-click="destroy">Destroy</a></td>
+    </tr>
+  </tbody>
+  <button data-event-click="prev" >Prev</button>
+  <button data-event-click="next">Next</button>
+</table>

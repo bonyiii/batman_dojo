@@ -13,9 +13,13 @@
 #= require_tree ./models
 #= require_tree ./views
 
+Batman.config.pathToApp = '/jstest'
 Batman.config.pathToHTML = '/assets/html'
 
 class Jstest extends Batman.App
+
+  @resources 'users'
+
   # @resources 'products'
   # @resources 'discounts', except: ['edit']
   # @resources 'customers', only: ['new', 'show']
@@ -30,6 +34,6 @@ class Jstest extends Batman.App
   # @route 'apps', 'apps#index'
   # @route 'apps/private', 'apps#private', as: 'privateApps'
 
-  @root 'main#index'
+  @root 'users#index'
 
 (global ? window).Jstest = Jstest
