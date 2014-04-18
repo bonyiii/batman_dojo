@@ -10,3 +10,10 @@ class Jstest.User extends Batman.Model
 
   @accessor 'name', ->
     "#{@get('first_name')} #{@get('last_name')}"
+
+  @accessor 'opposite_status', ->
+    if @get('status') == 'active'
+      'locked'
+    else
+      'active'
+

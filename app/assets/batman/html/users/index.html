@@ -10,9 +10,14 @@
     <tr data-foreach-user="users">
       <td><a data-bind="user.name" data-route="user"></a></td>
       <td><a data-bind="user.created_at" data-route="user"></a></td>
-      <td><a data-event-click="destroy">Destroy</a></td>
+      <td>
+        <a data-route="routes.users[user].edit">Edit</a>
+        <a data-event-click="toggle_lock" data-bind="user.status"></a>
+      </td>
     </tr>
   </tbody>
   <button data-event-click="prev" >Prev</button>
   <button data-event-click="next">Next</button>
 </table>
+
+<a data-route="routes.users.new">New User</a>

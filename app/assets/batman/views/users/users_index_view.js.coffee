@@ -14,4 +14,3 @@ class Jstest.UsersIndexView extends Batman.View
   prev: (node, event, view) ->
     @controller.page -= 1
     @controller.paginate()
-
