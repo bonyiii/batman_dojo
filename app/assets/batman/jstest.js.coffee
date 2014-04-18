@@ -13,8 +13,9 @@
 #= require_tree ./models
 #= require_tree ./views
 
-Batman.config.pathToApp = '/jstest'
-Batman.config.pathToHTML = '/assets/html'
+Batman.config.pathToApp = 'http://js-assessment-backend.herokuapp.com'
+#Batman.config.pathToHTML = '/assets/html'
+Batman.config.fetchRemoteHTML = false
 
 class Jstest extends Batman.App
 

@@ -8,7 +8,12 @@
 </head>
 <body>
 
-<div data-yield="main"></div>
+<div data-yield="main"> </div>
+<%= render template: "batman/users/index" %>
+<%= render template: "batman/users/edit" %>
+<%= render template: "batman/users/new" %>
+<%= render template: "batman/users/show" %>
+<%= render "batman/users/form" %>
 
 <script type="text/javascript">
   Jstest.run();
