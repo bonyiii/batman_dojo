@@ -25,22 +25,25 @@ class Jstest.UsersController extends Jstest.ApplicationController
     @set('user', new Jstest.User)
 
   create:  ->
-    @user.urlPrefix = 'http://js-assessment-backend.herokuapp.com'
-    @user.url = "users.json"
-    @user.save()
+    @user.save (err, user) =>
+      if err
+        throw err unless err instanceof Batman.ErrorsSet
+      else
+        @redirect user
 
   update: (params) ->
-    @user.urlPrefix = 'http://js-assessment-backend.herokuapp.com'
-    @user.url = "users.json"
-    @user.save()
+    @user.save (err, user) =>
+      console.log(arguments)
+      if err
+        throw err unless err instanceof Batman.ErrorsSet
+      else
+        @redirect user
 
   destroy: (params) ->
 
   toggle_lock: (node, event, context) ->
     user = if context.get('user') then context.get('user') else @user 
     user.set('status', user.get('opposite_status'))
-    user.urlPrefix = 'http://js-assessment-backend.herokuapp.com'
-    user.url = "users/#{user.get('id')}.json"
     user.save()
 
   paginate: =>

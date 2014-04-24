@@ -9,8 +9,21 @@
 </div>
 
 <div>
-  <label>Created At:</label>
-  <input data-bind="post.created_at"></input>
+  <label>Active:</label>
+  <input type="checkbox" data-bind="user.whatever" />
 </div>
 
 <input name="commit" type="submit" value="Submit">
+
+<div data-showif="user.errors.length">
+  <p>
+  <span data-bind="'error' | pluralize user.errors.length"></span>
+  prevented this user from being created:
+  </p>
+  <ul>
+    <li data-foreach-error="user.errors">
+      <span data-bind="error.attribute"> </span>
+      <span data-bind="error.message"> </span>
+    </li>
+  </ul>
+</div>
